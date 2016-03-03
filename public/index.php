@@ -170,7 +170,7 @@
 
     <article>
         <div class="container">
-            <div class="row content">
+			 <div class="row content">
               <div class="col-md-6 col-md-offset-3 wrap">
                   <h2>Files</h2>
                   <table class="table table-responsive table-striped table-hover">
@@ -407,11 +407,12 @@
                             <td>Database</td>
                             <td>scotchbox</td>
                         </tr>
-                        <tr>
+						            <tr>
                           <td>
                             Database Location
                           </td>
-						  <td id="databaseLocation">
+							            <td id="databaseLocation">
+
                           </td>
                         </tr>
                         <script type="text/javascript">
