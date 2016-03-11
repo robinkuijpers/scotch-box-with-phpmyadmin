@@ -7,4 +7,5 @@ Check out the official docs at: https://box.scotch.io
 
 ==========
 MegaXLR added File Listing in index.php
+
 MegaXLR added PHPMA location in index.php
