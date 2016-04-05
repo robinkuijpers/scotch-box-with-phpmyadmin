@@ -177,7 +177,9 @@
                     <?php
                     $files = scandir("/var/www/public");
                     foreach ($files as $file) {
-                      echo("<tr><td><a href='" . $file . "'>" . $file . "</a></td></tr>");
+                      if (substr($file, 0, 1) != ".") {
+                        echo("<tr><td><a href='" . $file . "'>" . $file . "</a></td></tr>");
+                      }
                     } ?>
                   </table>
               </div>
