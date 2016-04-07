@@ -176,11 +176,19 @@
                   <table class="table table-responsive table-striped table-hover">
                     <?php
                     $files = scandir("/var/www/public");
-                    foreach ($files as $file) {
-                      if (substr($file, 0, 1) != ".") {
-                        echo("<tr><td><a href='" . $file . "'>" . $file . "</a></td></tr>");
+                    sort($files);
+                    $i = 0;
+                      foreach ($files as $file) {
+                        if (substr($file, 0) === "." || substr($file, 0,2) === ".." || $file === basename($_SERVER['PHP_SELF'])){
+                        } else {
+                          echo("<tr><td><a href='" . $file . "'>" . $file . "</a></td></tr>");
+                          $i++;
+                        }
                       }
-                    } ?>
+                      if ($i < 1) {
+                        echo "<tr><td>No files are present in public folder</td></tr>";
+                      }
+                     ?>
                   </table>
               </div>
           </div>
@@ -414,12 +422,9 @@
                             Database Location
                           </td>
 							            <td id="databaseLocation">
-
+                            <a href="http://<?php echo $_SERVER['SERVER_ADDR']; ?>/phpmyadmin\"><?php echo $_SERVER['SERVER_ADDR']; ?>/phpmyadmin</a>
                           </td>
                         </tr>
-                        <script type="text/javascript">
-                          document.getElementById('databaseLocation').innerHTML = "<a href=\"http://" + window.location.hostname + "/phpmyadmin\">" + window.location.hostname + "/phpmyadmin</a>";
-                        </script>
                     </table>
                 </div>
             </div>

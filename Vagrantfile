@@ -10,5 +10,5 @@ Vagrant.configure("2") do |config|
     config.vm.provision :shell, path: "phpmyadmin.sh"
     # Optional NFS. Make sure to remove other synced_folder line too
     #config.vm.synced_folder ".", "/var/www", :nfs => { :mount_options => ["dmode=777","fmode=666"] }
-    config.vm.network "forwarded_port", guest: 80, host: 8080
+    config.vm.network "forwarded_port", guest: 80, host: 80
 end
